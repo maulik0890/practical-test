@@ -1,0 +1,106 @@
+@import "variable";
+
+.header{
+    padding: 51px 50px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+
+    .logo {
+        position: relative;
+        z-index: 9;
+    }
+
+    .menu{
+        .toggle{
+            
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+                cursor: pointer;
+                z-index: 99;
+                position: relative;
+                padding: 11px 0 0;
+
+            span{
+                height: 4px;
+                width: 34px;
+                background-color: $color-white;
+                display: inline-block;
+                vertical-align: top;
+                transition: 0.5s all;
+                &.two{
+                    margin: -10px 0 0px 10px;
+                }
+            }
+        }
+
+        nav{
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            padding: 0 50px;
+            background-color: $color-black;
+            height: 100%;
+            transition: 0.5s all;
+            
+            .inner-nav{
+                
+                position: fixed;
+                bottom: 0%;
+                transform: translateY(100%);
+                transition: 1s all;
+                opacity: 0;
+                visibility: hidden;
+
+                ul{
+                    li{
+                        opacity: 0;
+                        transform: translateY(100%);
+                        transition: opacity 0.5s, 
+                        transform 0.5s;
+
+                        &.show {
+                            opacity: 1;
+                            transform: translateY(0%);
+                          }
+
+                        a{
+                            font-size: 80px;
+                            line-height: 120px;
+                            font-style: italic;
+                            color: $color-white;
+                            text-decoration: none;
+                            font-weight: 700;
+                            @media screen and (max-width:991px){
+                                font-size: 50px;
+                                line-height: 80px;
+                            }
+                            @media screen and (max-width:767px){
+                                font-size: 40px;
+                            }
+                        }
+                    }
+                }
+
+               
+            }
+            
+            @media screen and (max-width:767px){
+                padding: 0 15px;
+            }
+        }
+    }
+
+    @media screen and (max-width:767px){
+        padding: 30px 15px;
+        .logo{
+            max-width: 102px;
+        }
+    }
+}

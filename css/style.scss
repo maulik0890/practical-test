@@ -1,0 +1,250 @@
+@import "variable";
+
+*, ::after, ::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+img{
+    max-width: 100%
+}
+
+.container{
+    max-width: 1360px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+@import "header";
+
+
+body{
+    &.active{
+        header{
+            .menu{
+                nav{
+                    top: 0;   
+                    
+                    .inner-nav{
+                        bottom: 50%;
+                        transform: translateY(50%);
+                        opacity: 1;
+                        visibility: visible;
+
+                        @media screen and (max-width:479px){
+                            bottom: 100%;
+                            transform: translateY(100%);
+                            padding-top: 185px;
+                        }
+                    }
+                }
+                .toggle{
+                    span{
+                        &.one{
+                            position: absolute;
+                            transform: rotate(45deg);
+                        }
+                        &.two{
+                            position: absolute;
+                            transform: rotate(-45deg);
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-banner{
+    background-image: url(../img/banner.png);
+    position: relative;
+    padding: 210px 0 75px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+    &:after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 1);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .slick-slider{
+        @media screen and (max-width:767px){
+            position: static;
+        } 
+    }
+    
+    @media screen and (min-width:1900px){
+        .container{
+            position: relative;
+        }
+      
+    }
+
+    .shape-img-top{
+        padding: 0 15px;
+        height: 554px;
+        max-width: 910px;
+        position: absolute;
+        display: inline-block;
+        background: #202020;
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 62% 100%, 0% 100%);
+        left: 50px;
+        opacity: 0.8;
+        top: 184px;
+
+        @media screen and (min-width:1900px){
+                left: -220px;
+                top: 0;
+        }
+       
+
+        @media screen and (max-width:1199px){
+            height: 435px;
+        }
+
+        @media screen and (max-width:991px){
+            left:0;
+            height: auto;
+            clip-path: none;
+            background: none;
+            padding: 0 0px 0 50px;
+
+            .shape-img{
+                height: 435px;
+                max-width: 910px;
+                width: 100%;
+                clip-path: polygon(0 0, 100% 0, 62% 100%, 0% 100%);
+                background: #202020;
+
+                @media screen and (max-width:767px){
+                    height: 355px;
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 45%);
+                }
+
+                @media screen and (max-width:639px){
+                    height: 300px;
+                }
+
+            }
+        }
+
+        @media screen and (max-width:767px){
+
+            padding: 0 15px;
+        }
+
+      
+    }
+    
+
+    .banner-text{
+        padding: 94px 0;
+        max-width: 900px;
+        width: 100%;
+        h2{         
+            font-size: 90px;
+            line-height: 109px;
+            letter-spacing: 5.4px;
+            color: $color-white;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width:1440px){
+            padding: 94px 50px 94px 100px;
+            h2{
+                font-size: 70px;
+            }
+        }
+        @media screen and (max-width:1199px){
+            padding-right: 210px;
+            h2{
+                font-size: 50px;
+                line-height: 70px;
+            }
+        }
+        @media screen and (max-width:991px){
+            padding:94px 100px 94px 70px;
+        }
+
+        @media screen and (max-width:767px){
+            padding: 44px 50px;
+            h2{ 
+                font-size: 40px;
+                line-height: 48px;
+                letter-spacing: 2.4px;
+            }
+        }
+        @media screen and (max-width:639px){
+            padding: 40px 21px;
+        }
+
+       
+    }
+    .slick-arrow{
+        position: absolute;
+        bottom: 0px;
+        font-size: 0;
+        height: 20px;
+        width: 30px;
+        display: inline-block;
+        background-color: transparent;
+        background-size: 100%;
+        border: none;
+        background-repeat: no-repeat;
+        z-index: 1;
+        cursor: pointer;
+        @media screen and (max-width:1199px){
+            bottom: -40px;
+        }
+    }
+    
+    .slick-prev{
+        @media screen and (min-width:1800px){
+            right: -180px;    
+        }
+        right: 40px;
+        background-image: url(../img/left-arrow.svg);
+        @media screen and (max-width:767px){
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateX(-20px);
+        }
+
+    }
+    .slick-next{
+        @media screen and (min-width:1800px){
+            right: -220px;    
+        }
+        right: 0;
+        background-image: url(../img/right-arrow.svg);
+        @media screen and (max-width:767px){
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateX(20px);
+            right: 0px;
+        }
+
+    }
+}
+
